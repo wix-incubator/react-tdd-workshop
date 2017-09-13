@@ -8,9 +8,9 @@ Welcome to my React TDD workshop!
 
 ### Working locally
 
-If you have a mac + node V6.X and up:
+All you need is a mac + node > 6.X.X:
 
-1. `git clone`
+1. `git clone git@github.com:wix/react-tdd-workshop.git`
 2. `npm install`
 3. `npm test`
 4. Start working :sunglasses:
