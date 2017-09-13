@@ -18,10 +18,10 @@ describe('React application', () => {
     browser.close();
   });
 
-  describe('open page', () => {
-    it('should display title', async () => {
-      await page.goto(testBaseUrl);
-      expect(await page.$eval('h2', elem => elem.innerText)).to.eql('Hello World!');
-    });
+  it('should have an "X" after first use plays', async () => {
+    await page.goto(testBaseUrl);
+    const cells = await page.$$('[data-hook="cell"]');
+    await cells[0].click();
+    expect(await cells[0].evaluate(elem => elem.innerText)).to.equal('X');
   });
 });
