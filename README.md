@@ -24,16 +24,16 @@ We have a full online environment which you can use for everything you need!
 3. npm test
 4. Start working :sunglasses:
 
-* An alternative Cloud9 setup (If you are not part of this workshop and want to play with it):
+An alternative Cloud9 setup (If you are not part of this workshop and want to play with it):
 
-  1. Create a new workspace in Cloud9
-  2. Mark it as "node" environment
-  3. In "Clone from Git or Mercurial URL (optional)" add my github url: `git@github.com:wix/react-tdd-workshop.git`
-  4. Create workspace
-  5. npm install
-  6. npm test
+1. Create a new workspace in Cloud9
+2. Mark it as "node" environment
+3. In "Clone from Git or Mercurial URL (optional)" add my github url: `git@github.com:wix/react-tdd-workshop.git`
+4. Create workspace
+5. npm install
+6. npm test
 
-This alternative setup will require that you will login using your Github account
+* This alternative setup will require that you will login using your Github account
 
 ### What is this workshop about?
 
