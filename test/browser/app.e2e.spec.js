@@ -21,6 +21,7 @@ describe('React application', () => {
   it('should have an "X" after first use plays', async () => {
     await page.goto(testBaseUrl);
     const cells = await page.$$('[data-hook="cell"]');
+    expect(await cells[0].evaluate(elem => elem.innerText)).to.equal('');
     await cells[0].click();
     expect(await cells[0].evaluate(elem => elem.innerText)).to.equal('X');
   });
