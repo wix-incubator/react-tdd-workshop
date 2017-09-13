@@ -17,6 +17,12 @@ All you need is a mac + node > 6.X.X:
 
 ### Working on a web environment
 
+We have a full online environment which you can use for everything you need!
+
+1. Go to [Cloud 9](https://c9.io) and create an account / login using your Github account
+2. Clone **** workspace
+3. npm test
+4. Start working :sunglasses: :sunglasses:
 
 
 
