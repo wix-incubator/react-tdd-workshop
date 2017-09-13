@@ -35,7 +35,7 @@ An alternative Cloud9 setup (If you are not part of this workshop and want to pl
 
 * This alternative setup will require that you will login using your Github account
 
-### What is this workshop about?
+# What is this workshop about?
 
 We will be building the [Tic Tac Toe](https://en.wikipedia.org/wiki/Tic-tac-toe) game, using React + Mocha + Puppeteer, all TDD, (almost) without openning the browser!
 
@@ -43,6 +43,8 @@ The end result will be something like this:
 
 <img width="241" src ="assets/tic-tac-toe.png" />
 
-### What we had so far (or: the parts that I'm showing during the workshop)
+# What we had so far (or: the parts that I'm showing during the workshop)
 
+
+# Workshop Instructions
 
