@@ -25,4 +25,13 @@ We have a full online environment which you can use for everything you need!
 4. Start working :sunglasses:
 
 
+### What is this workshop about?
+
+We will be building the [Tic Tac Toe](https://en.wikipedia.org/wiki/Tic-tac-toe) game, using React + Mocha + Puppeteer, all TDD, (almost) without openning the browser!
+
+The end result will be something like this:
+
+
+### What we had so far (or: the parts that I'm showing during the workshop)
+
 
