@@ -1,6 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+export const getGameStatus = board => {
+  const checkForWinner = player => board[0].every(cell => cell === player);
+
+  if (checkForWinner('X')) {
+    return 'X';
+  } else if (checkForWinner('O')) {
+    return 'O';
+  }
+};
+
 class Board extends React.Component {
   constructor() {
     super();
@@ -11,7 +21,7 @@ class Board extends React.Component {
     const board = this.state.board.map((row, rowIndex) =>
       rowIndex !== rowI ? row : row.map((cell, cellIndex) => cellI !== cellIndex ? cell : this.state.currentPlayer));
 
-    if (board[0].every(cell => cell === this.state.currentPlayer)) {
+    if (getGameStatus(board)) {
       this.props.onGameOver({winner: this.state.currentPlayer});
     }
     const nextPlayer = this.state.currentPlayer === 'X' ? 'O' : 'X';
