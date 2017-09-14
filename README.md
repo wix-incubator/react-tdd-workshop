@@ -57,7 +57,7 @@ The end result will be something like this:
 ### Workshop tasks
 
 1. Complete game winning logic: write unit tests for the different game winning scenarios (columns/diagonals/tie).
-2. Write a component test verifiying a user cannot press a non wmpty cell.
+2. Write a component test verifiying a user cannot press a non empty cell.
 3. 
 
 
