@@ -65,7 +65,7 @@ The end result will be something like this:
   <summary><B>Bonuses</B></summary>
   <p>
   
-  _Bonus1:_ Add a server for game winning counter persistance
+  _Bonus1: Add a server for game winning counter persistance_
 
   1. Write a browser test: 
       
@@ -82,6 +82,6 @@ The end result will be something like this:
       
       b. Displaying saved winnings on load.
    
- _Bonus 2:_  Add an option to save/load an existing game (using save/load buttons)
+ _Bonus 2: Add an option to save/load an existing game (using save/load buttons)_
 
 </details>
