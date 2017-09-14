@@ -61,9 +61,8 @@ The end result will be something like this:
 3. Write a browser test for marking next user in special color (show 'X' and 'O' users and mark next user in special color).
 4. Write a component test for displaying number of wins next to each user.
 
-~Bonus:~
+Bonus1: Add a server for game winning counter persistance
 
-* Add a server for game winning counter persistance:
   1. Write a browser test: 
       
       a. Win a game.
@@ -79,7 +78,7 @@ The end result will be something like this:
       
       b. Displaying saved winnings on load.
    
-2. Add an option to save/load an existing game (using save/load buttons)
+ Bonus 2:  Add an option to save/load an existing game (using save/load buttons)
 
 
 
