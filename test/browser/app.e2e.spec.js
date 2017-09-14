@@ -8,6 +8,7 @@ let browser, page;
 const navigate = (url = '') => page.goto(`${testBaseUrl}${url}`);
 const clickCellAt = async index => (await page.$$('[data-hook="cell"]'))[index].click();
 const getCellContentAt = async index => (await page.$$('[data-hook="cell"]'))[index].evaluate(elem => elem.innerText);
+const getWinnerMessage = () => page.$eval('[data-hook="winner-message"]', elem => elem.innerText);
 describe('React application', () => {
   beforeAndAfter();
 
@@ -25,5 +26,15 @@ describe('React application', () => {
     expect(await getCellContentAt(0)).to.equal('');
     await clickCellAt(0);
     expect(await getCellContentAt(0)).to.equal('X');
+  });
+
+  it('player "X" should win the game', async () => {
+    await navigate();
+    await clickCellAt(0);
+    await clickCellAt(3);
+    await clickCellAt(1);
+    await clickCellAt(4);
+    await clickCellAt(2);
+    expect(await getWinnerMessage()).to.equal('X wins!');
   });
 });
