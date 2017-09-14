@@ -56,14 +56,15 @@ The end result will be something like this:
 
 ### Workshop tasks
 
-1. Complete game winning logic: write unit tests for the different game winning scenarios (columns/diagonals/tie).
+1. Complete game winning logic: write unit tests for the different game winning scenarios (all rows, columns/diagonals/tie).
 2. Write a component test verifiying a user cannot press a non empty cell.
 3. Write a component test for a tie (show a "It's a tie!" message).
-4. Write a browser test for marking next user in special color (show 'X' and 'O' users and mark next user in special color).
-5. Write a component test for displaying number of wins next to each user.
+4. Write a browser test for marking next user in a special color (show 'X' and 'O' users and mark next user in special color).
+5. Write a component test for displaying the number of wins next to each user: Win a game. Press a "new game" button, and win the game again.
+
 
 <details>
-  <summary><B>Bonuses</B></summary>
+  <summary><B></B></summary>
   <p>
   
   _Bonus1: Add a server for game winning counter persistance_
