@@ -64,7 +64,12 @@ The end result will be something like this:
 Bonus:
 
 #### Add a server for game winning counter persistance:
-   1. Write a browser test for winning a game, refreshing the page, and testing for winning count.
+   1. Write a browser test that: 
+      
+      a. Win a game.
+      b. Refresh the page.
+      c. Testing for winning count.
+      
    2. Write an integration test for server api endpoints
    3. Optional: write a component test for:
       
