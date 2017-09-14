@@ -4,17 +4,18 @@ import PropTypes from 'prop-types';
 class Board extends React.Component {
   constructor() {
     super();
-    this.state = {board: [['', '', ''], ['', '', ''], ['', '', '']]};
+    this.state = {board: [['', '', ''], ['', '', ''], ['', '', '']], currentPlayer: 'X'};
   }
 
   cellClicked(rowI, cellI) {
     const board = this.state.board.map((row, rowIndex) =>
-      rowIndex !== rowI ? row : row.map((cell, cellIndex) => cellI !== cellIndex ? cell : 'X'));
+      rowIndex !== rowI ? row : row.map((cell, cellIndex) => cellI !== cellIndex ? cell : this.state.currentPlayer));
 
-    if (board[0].every(cell => cell === 'X')) {
+    if (board[0].every(cell => cell === this.state.currentPlayer)) {
       this.props.onGameOver();
     }
-    this.setState({board});
+    const nextPlayer = this.state.currentPlayer === 'X' ? 'O' : 'X';
+    this.setState({board, currentPlayer: nextPlayer});
   }
 
   render() {
