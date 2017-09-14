@@ -64,16 +64,19 @@ The end result will be something like this:
 Bonus:
 
 #### Add a server for game winning counter persistance:
-   1. Write a browser test that: 
+1. Write a browser test: 
       
       a. Win a game.
+      
       b. Refresh the page.
-      c. Testing for winning count.
+      
+      c. Test for winning count.
       
    2. Write an integration test for server api endpoints
    3. Optional: write a component test for:
       
-      a. Sending a post request on win. 
+      a. Sending a post request on win.
+      
       b. Displaying saved winnings on load.
    
 2. Add an option to save/load an existing game (using save/load buttons)
