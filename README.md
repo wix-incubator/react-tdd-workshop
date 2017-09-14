@@ -64,7 +64,7 @@ The end result will be something like this:
 
 
 <details>
-  <summary><B></B></summary>
+  <summary><B>Bonuses</B></summary>
   <p>
   
   _Bonus1: Add a server for game winning counter persistance_
