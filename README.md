@@ -62,7 +62,7 @@ The end result will be something like this:
 4. Write a component test for displaying number of wins next to each user.
 
 <details>
-  <summary>Bonuses</summary>
+  <summary><h4>Bonuses</h4></summary>
   <p>
   
   _Bonus1:_ Add a server for game winning counter persistance
