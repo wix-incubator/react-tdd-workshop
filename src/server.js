@@ -10,7 +10,7 @@ module.exports = () => {
     const templatePath = './src/index.ejs';
     const data = {
       title: 'Wix Full Stack Project Boilerplate',
-      staticsBaseUrl: 'http://localhost:3200/',
+      staticsBaseUrl: 'http://react-tdd-workshop-yanivef.c9users.io:8081/',
       baseurl: 'http://localhost:3000/',
       locale: 'en'
     };

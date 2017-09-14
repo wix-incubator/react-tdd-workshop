@@ -1,3 +1,3 @@
 const server = require('./dist/src/server');
 
-server().listen(3000);
+server().listen(8080);

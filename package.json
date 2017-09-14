@@ -9,7 +9,7 @@
     "url": ""
   },
   "scripts": {
-    "start": "yoshi start",
+    "start": "PORT=8080 yoshi start",
     "build": ":",
     "precommit": "yoshi lint",
     "pretest": "yoshi build",
@@ -50,5 +50,12 @@
   },
   "eslintConfig": {
     "extends": "wix/react"
+  },
+  "yoshi": {
+	  "servers": {
+	    "cdn": {
+	      "port": 8081
+	    }
+	  }
   }
 }
