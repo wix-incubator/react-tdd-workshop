@@ -11,8 +11,8 @@ class App extends React.Component {
   render() {
     return (
       <div data-hook="app" className={s.root}>
-        <Board onGameOver={() => this.setState({winner: 'X'})}/>
-        {this.state.winner && <div data-hook="winner-message">{'X wins!'}</div>}
+        <Board onGameOver={({winner}) => this.setState({winner})}/>
+        {this.state.winner && <div data-hook="winner-message">{`${this.state.winner} wins!`}</div>}
       </div>
     );
   }

@@ -12,7 +12,7 @@ class Board extends React.Component {
       rowIndex !== rowI ? row : row.map((cell, cellIndex) => cellI !== cellIndex ? cell : this.state.currentPlayer));
 
     if (board[0].every(cell => cell === this.state.currentPlayer)) {
-      this.props.onGameOver();
+      this.props.onGameOver({winner: this.state.currentPlayer});
     }
     const nextPlayer = this.state.currentPlayer === 'X' ? 'O' : 'X';
     this.setState({board, currentPlayer: nextPlayer});

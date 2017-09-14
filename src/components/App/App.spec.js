@@ -9,6 +9,7 @@ const render = () => mount(
 );
 const clickCellAt = index => wrapper.find('[data-hook="cell"]').at(index).simulate('click');
 const getCellTextAt = index => wrapper.find('[data-hook="cell"]').at(index).text();
+const getWinnerMessage = () => wrapper.find('[data-hook="winner-message"]').text();
 
 describe('App', () => {
 
@@ -20,5 +21,16 @@ describe('App', () => {
     expect(getCellTextAt(0)).to.eq('X');
     clickCellAt(1);
     expect(getCellTextAt(1)).to.eq('O');
+  });
+
+  it('Player "O" should win the game', () => {
+    wrapper = render();
+    clickCellAt(3);
+    clickCellAt(0);
+    clickCellAt(4);
+    clickCellAt(1);
+    clickCellAt(6);
+    clickCellAt(2);
+    expect(getWinnerMessage()).to.eq('O wins!');
   });
 });
