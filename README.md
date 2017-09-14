@@ -1,6 +1,6 @@
 # React Tdd Workshop
 
-[![Build Status](https://travis-ci.org/wix/react-tdd-workshop.svg)](https://travis-ci.org/wix/react-tdd-workshop)
+[![Build Status](https://travis-ci.org/wix/react-tdd-workshop.svg?branch=master)](https://travis-ci.org/wix/react-tdd-workshop)
 
 Welcome to my React TDD workshop!
 
