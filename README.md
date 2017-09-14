@@ -61,10 +61,10 @@ The end result will be something like this:
 3. Write a browser test for marking next user in special color (show 'X' and 'O' users and mark next user in special color).
 4. Write a component test for displaying number of wins next to each user.
 
-Bonus:
+~Bonus:~
 
-#### Add a server for game winning counter persistance:
-1. Write a browser test: 
+* Add a server for game winning counter persistance:
+  1. Write a browser test: 
       
       a. Win a game.
       
