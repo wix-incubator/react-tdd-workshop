@@ -58,8 +58,9 @@ The end result will be something like this:
 
 1. Complete game winning logic: write unit tests for the different game winning scenarios (columns/diagonals/tie).
 2. Write a component test verifiying a user cannot press a non empty cell.
-3. Write a browser test for marking next user in special color (show 'X' and 'O' users and mark next user in special color).
-4. Write a component test for displaying number of wins next to each user.
+3. Write a component test for a tie (show a "It's a tie!" message).
+4. Write a browser test for marking next user in special color (show 'X' and 'O' users and mark next user in special color).
+5. Write a component test for displaying number of wins next to each user.
 
 <details>
   <summary><B>Bonuses</B></summary>
