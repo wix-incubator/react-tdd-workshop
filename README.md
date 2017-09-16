@@ -30,6 +30,7 @@ An alternative Cloud9 setup (If you are not part of this workshop and want to pl
 2. Mark it as "node" environment
 3. In "Clone from Git or Mercurial URL (optional)" add my github url: `git@github.com:wix/react-tdd-workshop.git`
 4. Create workspace
+5. Move to the relevant branch: `git checkout steps-5-cloud-9`
 5. npm install
 6. npm test
 
