@@ -21,6 +21,7 @@ We have a full online environment which you can use for everything you need!
 
 1. Go to [Cloud 9](https://c9.io) and create an account / login using your Github account
 2. Ask me for permissions and link to a workspace
+3. `git checkout steps-5`
 3. npm test
 4. Start working :sunglasses:
 
