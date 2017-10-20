@@ -2,7 +2,7 @@ import {expect} from 'chai';
 import 'babel-polyfill';
 import puppeteer from 'puppeteer';
 import {beforeAndAfter} from '../environment';
-import {testBaseUrl} from '../test-common';
+import {testBaseUrl, eventually} from '../test-common';
 
 let browser, page;
 const navigate = () => page.goto(testBaseUrl);
@@ -46,11 +46,11 @@ describe('React application', () => {
   it('should save a game', async () => {
     await navigate();
     await clickCellAt(0);
-    //await clickCellAt(3);
     await save();
     await navigate();
     await load();
-    expect(await getCellText(0)).to.equal('X');
-    //expect(await getCellText(1)).to.equal('O');
+    return eventually(async () => {
+      expect(await getCellText(0)).to.equal('X');
+    });
   });
 });
