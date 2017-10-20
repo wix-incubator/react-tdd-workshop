@@ -3,7 +3,7 @@ import React from 'react';
 class Board extends React.Component {
   constructor() {
     super();
-    this.state = {board: [['', '', ''], ['', '', ''], ['', '', '']]};
+    this.state = {board: [...Array(3)].map(() => Array(3).fill(''))};
   }
 
   cellClicked(rowIndex, cellIndex) {
