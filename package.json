@@ -26,7 +26,7 @@
     "jsdom": "^10.1.0",
     "jsdom-global": "^3.0.2",
     "nock": "^8.0.0",
-    "puppeteer": "^0.10.1",
+    "puppeteer": "^0.12.0",
     "react-addons-test-utils": "^15.3.2",
     "react-test-renderer": "^15.5.4",
     "sleep": "^5.1.1",

@@ -4,7 +4,6 @@ import puppeteer from 'puppeteer';
 import {beforeAndAfter} from '../environment';
 import {testBaseUrl} from '../test-common';
 
-
 describe('React application', () => {
   let browser, page;
   beforeAndAfter();
@@ -18,10 +17,9 @@ describe('React application', () => {
     browser.close();
   });
 
-  describe('open page', () => {
-    it('should display title', async () => {
-      await page.goto(testBaseUrl);
-      expect(await page.$eval('h2', elem => elem.innerText)).to.eql('Hello World!');
-    });
+  it('should show "X" when first user plays', async () => {
+    await page.goto(testBaseUrl);
+    (await page.$$('[data-hook="cell"]'))[0].click();
+    expect(await page.$$eval('[data-hook="cell"]', elems => elems[0].innerText)).to.equal('X');
   });
 });
