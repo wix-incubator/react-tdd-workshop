@@ -24,8 +24,6 @@ app
   .use(express.static('dist/statics'));
 
 const port = process.env.FAKE_SERVER_PORT || 8081;
-app.listen(port, () => {
-  console.log(`CDN server is running on port ${port}`);
-});
+app.listen(port);
 
 module.exports = app;
