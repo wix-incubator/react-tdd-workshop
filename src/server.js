@@ -13,12 +13,13 @@ module.exports = () => {
   app.use(bodyParser.json());
 
   app.get('/api/game', async (req, res) => {
-    data.board[0][0] = 'X';
     await new Promise(resolve => setTimeout(resolve, 1000));
     res.json(data);
   });
 
-  app.post('/api/game', (req, res) => {
+  app.post('/api/game', async (req, res) => {
+    data.board = req.body.board;
+    await new Promise(resolve => setTimeout(resolve, 1000));
     res.sendStatus(200);
   });
 

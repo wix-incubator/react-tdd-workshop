@@ -15,7 +15,8 @@ class App extends React.Component {
   handleSaveGame = () => {
     fetch('/api/game', {
       method: 'POST',
-      body: {board: this.state.board}
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({board: this.state.board})
     });
   }
 
