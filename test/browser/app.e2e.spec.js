@@ -2,7 +2,8 @@ import {expect} from 'chai';
 import 'babel-polyfill';
 import puppeteer from 'puppeteer';
 import {beforeAndAfter} from '../environment';
-import {testBaseUrl} from '../test-common';
+import {testBaseUrl, eventually} from '../test-common';
+
 
 describe('React application', () => {
   let browser, page;
@@ -19,7 +20,10 @@ describe('React application', () => {
 
   it('should show "X" when first user plays', async () => {
     await page.goto(testBaseUrl);
+    expect(await page.$$eval('[data-hook="cell"]', elems => elems[0].innerText)).to.equal('');
     (await page.$$('[data-hook="cell"]'))[0].click();
-    expect(await page.$$eval('[data-hook="cell"]', elems => elems[0].innerText)).to.equal('X');
+    return eventually(async () =>
+      expect(await page.$$eval('[data-hook="cell"]', elems => elems[0].innerText)).to.equal('X')
+    );
   });
 });
