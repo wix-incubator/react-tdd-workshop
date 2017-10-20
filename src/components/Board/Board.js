@@ -13,8 +13,8 @@ class Board extends React.Component {
   cellClicked(rowIndex, cellIndex) {
     const board = [...this.state.board];
     board[rowIndex][cellIndex] = this.state.nextPlayer;
-    if (board[0].every(cell => cell === 'X')) {
-      this.props.onGameOver();
+    if (board[0].every(cell => cell === this.state.nextPlayer)) {
+      this.props.onGameOver(this.state.nextPlayer);
     }
     const nextPlayer = this.state.nextPlayer === 'X' ? 'O' : 'X';
     this.setState({board, nextPlayer});
