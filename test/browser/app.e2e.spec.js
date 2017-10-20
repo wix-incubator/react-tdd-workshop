@@ -9,6 +9,7 @@ const navigate = () => page.goto(testBaseUrl);
 const clickCellAt = async index => (await page.$$('[data-hook="cell"]'))[index].click();
 const getCellText = index => page.$$eval('[data-hook="cell"]', (elems, index) => elems[index].innerText, index);
 const getWinnerMessage = () => page.$eval('[data-hook="winner-message"]', elem => elem.innerText);
+const isWinnerMessageVisible = async () => (await page.$('[data-hook="winner-message"]')) !== null;
 
 describe('React application', () => {
   beforeAndAfter();
@@ -32,6 +33,7 @@ describe('React application', () => {
   it('Player "X" should win', async () => {
     await navigate();
     await clickCellAt(0);
+    expect(await isWinnerMessageVisible()).to.equal(false);
     await clickCellAt(3);
     await clickCellAt(1);
     await clickCellAt(4);

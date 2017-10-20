@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 class Board extends React.Component {
   constructor() {
@@ -9,6 +10,9 @@ class Board extends React.Component {
   cellClicked(rowIndex, cellIndex) {
     const board = [...this.state.board];
     board[rowIndex][cellIndex] = 'X';
+    if (board[0].every(x => x === 'X')) {
+      this.props.onGameOver();
+    }
     this.setState({board});
   }
 
@@ -28,5 +32,9 @@ class Board extends React.Component {
     </table>);
   }
 }
+
+Board.propTypes = {
+  onGameOver: PropTypes.func.isRequired
+};
 
 export default Board;
