@@ -6,6 +6,7 @@ function App() {
   return (
     <div data-hook="app" className={s.root}>
       <Board/>
+      <div data-hook="winner-message">X Wins!</div>
     </div>
   );
 }
