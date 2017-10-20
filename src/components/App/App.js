@@ -12,6 +12,19 @@ class App extends React.Component {
     };
   }
 
+  handleSaveGame = () => {
+    fetch('/api/game', {
+      method: 'POST',
+      body: {board: this.state.board}
+    });
+  }
+
+  handleLoadGame = async () => {
+    const response = await fetch('/api/game');
+    const {board} = await response.json();
+    this.setState({board});
+  }
+
   onGameChanged = (rowIndex, cellIndex) => {
     const nextPlayer = this.state.nextPlayer;
     const board = [...this.state.board];
@@ -28,6 +41,10 @@ class App extends React.Component {
       <div data-hook="app" className={s.root}>
         <Board handleGameChanged={this.onGameChanged} board={this.state.board}/>
         {this.state.winner && <div data-hook="winner-message">{`${this.state.winner} Wins!`}</div>}
+        <div>
+          <button data-hook="save" onClick={this.handleSaveGame}>Save</button>
+          <button data-hook="load" onClick={this.handleLoadGame}>Load</button>
+        </div>
       </div>
     );
   }

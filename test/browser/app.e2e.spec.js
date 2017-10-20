@@ -10,12 +10,14 @@ const clickCellAt = async index => (await page.$$('[data-hook="cell"]'))[index].
 const getCellText = index => page.$$eval('[data-hook="cell"]', (elems, index) => elems[index].innerText, index);
 const getWinnerMessage = () => page.$eval('[data-hook="winner-message"]', elem => elem.innerText);
 const isWinnerMessageVisible = async () => (await page.$('[data-hook="winner-message"]')) !== null;
+const save = async () => page.click('[data-hook="save"]');
+const load = async () => page.click('[data-hook="load"]');
 
 describe('React application', () => {
   beforeAndAfter();
 
   before(async () => {
-    browser = await puppeteer.launch();
+    browser = await puppeteer.launch({headless: false});
     page = await browser.newPage();
   });
 
@@ -39,5 +41,16 @@ describe('React application', () => {
     await clickCellAt(4);
     await clickCellAt(2);
     expect(await getWinnerMessage()).to.equal('X Wins!');
+  });
+
+  it('should save a game', async () => {
+    await navigate();
+    await clickCellAt(0);
+    //await clickCellAt(3);
+    await save();
+    await navigate();
+    await load();
+    expect(await getCellText(0)).to.equal('X');
+    //expect(await getCellText(1)).to.equal('O');
   });
 });

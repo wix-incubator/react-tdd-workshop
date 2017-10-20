@@ -2,9 +2,24 @@ import express from 'express';
 import ejs from 'ejs';
 import Promise from 'bluebird';
 import 'babel-polyfill';
+import bodyParser from 'body-parser';
 
 module.exports = () => {
   const app = express();
+  const data = {
+    board: [...Array(3)].map(() => Array(3).fill(''))
+  };
+
+  app.use(bodyParser.json());
+
+  app.get('/api/game', (req, res) => {
+    data.board[0][0] = 'X';
+    res.json(data);
+  });
+
+  app.post('/api/game', (req, res) => {
+    res.sendStatus(200);
+  });
 
   app.get('/', async (req, res) => {
     const templatePath = './src/index.ejs';
