@@ -2,6 +2,11 @@ import React from 'react';
 import Board from '../Board';
 import s from './App.scss';
 
+export const getGameStatus = board => {
+  const checkForWinning = player => board[0].every(cell => cell === player);
+  return checkForWinning('X') || checkForWinning('O');
+};
+
 class App extends React.Component {
   constructor() {
     super();
@@ -30,7 +35,7 @@ class App extends React.Component {
     const nextPlayer = this.state.nextPlayer;
     const board = [...this.state.board];
     board[rowIndex][cellIndex] = nextPlayer;
-    if (board[0].every(cell => cell === nextPlayer)) {
+    if (getGameStatus(board)) {
       this.setState({winner: nextPlayer});
     }
     const newNextPlayer = this.state.nextPlayer === 'X' ? 'O' : 'X';
