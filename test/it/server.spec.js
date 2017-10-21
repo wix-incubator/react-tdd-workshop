@@ -1,19 +1,27 @@
 import {expect} from 'chai';
-import axios from 'axios';
 import {testBaseUrl} from '../test-common';
 import {beforeAndAfter} from '../environment';
-
-const axiosInstance = axios.create({
-  baseURL: testBaseUrl,
-  adapter: require('axios/lib/adapters/http')
-});
+import fetch from 'node-fetch';
 
 describe('When rendering', () => {
 
   beforeAndAfter();
 
-  it('should display a title', async () => {
-    const response = await axiosInstance.get('/');
-    expect(response.data).to.contain('Wix Full Stack Project Boilerplate');
+  it('should load a saved game', async () => {
+    const aGame = {
+      board: [['X', 'O', 'X'], ['', '', ''], ['', '', '']]
+    };
+    await fetch(`${testBaseUrl}/api/game`, {
+      method: 'post',
+      body: JSON.stringify(aGame),
+      headers: {'Content-Type': 'application/json'}
+    });
+
+    const response = await fetch(`${testBaseUrl}/api/game`);
+    expect(await response.json()).to.eql(aGame);
   });
+  // it('should display a title', async () => {
+  //   const response = await axiosInstance.get('/');
+  //   expect(response.data).to.contain('Wix Full Stack Project Boilerplate');
+  // });
 });
