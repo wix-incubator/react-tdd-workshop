@@ -54,7 +54,8 @@ The end result will be something like this:
 2. Browser test for 'X' user winning the game.
 3. Component test for displaying 'O' after second user click.
 4. Component test for 'O' user winning the game.
-5. Refactor winning logic to a separate method + add unit test for it.
+5. Add save/load functionality (e2e + integration tests)
+6. Refactor winning logic to a separate method + add unit test for it.
 
 ### Workshop tasks
 
@@ -86,6 +87,6 @@ The end result will be something like this:
       
       b. Displaying saved winnings on load.
    
- _Bonus 2: Add an option to save/load an existing game (using save/load buttons)_
+ _Bonus 2: Finish save/load functionality
 
 </details>
