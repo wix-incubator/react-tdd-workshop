@@ -11,9 +11,10 @@ Welcome to my React TDD workshop!
 All you need is a mac + node > 6.X.X:
 
 1. `git clone git@github.com:wix/react-tdd-workshop.git`
-2. `npm install`
-3. `npm test`
-4. Start working :sunglasses:
+2. `git checkout vilnius-workshop`
+3. `npm install`
+4. `npm test`
+5. Start working :sunglasses:
 
 ### Working on a web environment
 
