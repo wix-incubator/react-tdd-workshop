@@ -1,7 +1,7 @@
 import React from 'react';
 import {expect} from 'chai';
 import {mount} from 'enzyme';
-import App from './App';
+import App, {getGameStatus} from './App';
 
 let wrapper;
 const render = x => mount(
@@ -31,5 +31,12 @@ describe('App', () => {
     clickACellAt(6);
     clickACellAt(2);
     expect(getWinnerMessage()).to.equal('O Wins!');
+  });
+});
+
+describe('getGameStatus', () => {
+  it('X should win', () => {
+    const board = [['X', 'X', 'X'], ['', '', ''], ['', '', '']];
+    expect(getGameStatus(board)).to.equal('X');
   });
 });

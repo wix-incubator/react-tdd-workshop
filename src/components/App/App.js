@@ -4,7 +4,13 @@ import s from './App.scss';
 
 export const getGameStatus = board => {
   const checkForWinning = player => board[0].every(cell => cell === player);
-  return checkForWinning('X') || checkForWinning('O');
+  if (checkForWinning('X')) {
+    return 'X';
+  }
+  if (checkForWinning('O')) {
+    return 'O';
+  }
+  return;
 };
 
 class App extends React.Component {

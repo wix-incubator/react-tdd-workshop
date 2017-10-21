@@ -13,7 +13,7 @@
     "build": ":",
     "precommit": "yoshi lint",
     "pretest": "yoshi build",
-    "test": "yoshi test --mocha",
+    "test": "yoshi test",
     "posttest": "yoshi lint",
     "release": "yoshi release"
   },
